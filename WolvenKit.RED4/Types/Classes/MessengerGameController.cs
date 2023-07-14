@@ -29,6 +29,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(6)] 
+		[RED("customDialogRef")] 
+		public inkWidgetReference CustomDialogRef
+		{
+			get => GetPropertyValue<inkWidgetReference>();
+			set => SetPropertyValue<inkWidgetReference>(value);
+		}
+
+		[Ordinal(7)] 
 		[RED("virtualList")] 
 		public inkWidgetReference VirtualList
 		{
@@ -36,7 +44,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<inkWidgetReference>(value);
 		}
 
-		[Ordinal(7)] 
+		[Ordinal(8)] 
 		[RED("buttonHintsController")] 
 		public CWeakHandle<ButtonHints> ButtonHintsController
 		{
@@ -44,7 +52,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CWeakHandle<ButtonHints>>(value);
 		}
 
-		[Ordinal(8)] 
+		[Ordinal(9)] 
 		[RED("dialogController")] 
 		public CWeakHandle<MessengerDialogViewController> DialogController
 		{
@@ -52,7 +60,15 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CWeakHandle<MessengerDialogViewController>>(value);
 		}
 
-		[Ordinal(9)] 
+		[Ordinal(10)] 
+		[RED("customDialogController")] 
+		public CWeakHandle<CustomDialogViewController> CustomDialogController
+		{
+			get => GetPropertyValue<CWeakHandle<CustomDialogViewController>>();
+			set => SetPropertyValue<CWeakHandle<CustomDialogViewController>>(value);
+		}
+
+		[Ordinal(11)] 
 		[RED("listController")] 
 		public CWeakHandle<MessengerContactsVirtualNestedListController> ListController
 		{
@@ -60,7 +76,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CWeakHandle<MessengerContactsVirtualNestedListController>>(value);
 		}
 
-		[Ordinal(10)] 
+		[Ordinal(12)] 
 		[RED("journalManager")] 
 		public CWeakHandle<gameJournalManager> JournalManager
 		{
@@ -68,7 +84,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CWeakHandle<gameJournalManager>>(value);
 		}
 
-		[Ordinal(11)] 
+		[Ordinal(13)] 
 		[RED("menuEventDispatcher")] 
 		public CWeakHandle<inkMenuEventDispatcher> MenuEventDispatcher
 		{
@@ -76,7 +92,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CWeakHandle<inkMenuEventDispatcher>>(value);
 		}
 
-		[Ordinal(12)] 
+		[Ordinal(14)] 
 		[RED("activeData")] 
 		public CHandle<MessengerContactSyncData> ActiveData
 		{
