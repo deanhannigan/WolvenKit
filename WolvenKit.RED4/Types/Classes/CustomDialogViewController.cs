@@ -13,38 +13,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(2)] 
-		[RED("choicesList")] 
-		public inkCompoundWidgetReference ChoicesList
+		[RED("messagesListController")] 
+		public CWeakHandle<JournalEntriesListController> CustomEntriesListController
 		{
-			get => GetPropertyValue<inkCompoundWidgetReference>();
-			set => SetPropertyValue<inkCompoundWidgetReference>(value);
+			get => GetPropertyValue<CWeakHandle<CustomEntriesListController>>();
+			set => SetPropertyValue<CWeakHandle<CustomEntriesListController>>(value);
 		}
 
 		[Ordinal(3)] 
-		[RED("replayFluff")] 
-		public inkCompoundWidgetReference ReplayFluff
-		{
-			get => GetPropertyValue<inkCompoundWidgetReference>();
-			set => SetPropertyValue<inkCompoundWidgetReference>(value);
-		}
-
-		[Ordinal(4)] 
-		[RED("messagesListController")] 
-		public CWeakHandle<JournalEntriesListController> MessagesListController
-		{
-			get => GetPropertyValue<CWeakHandle<JournalEntriesListController>>();
-			set => SetPropertyValue<CWeakHandle<JournalEntriesListController>>(value);
-		}
-
-		[Ordinal(5)] 
-		[RED("choicesListController")] 
-		public CWeakHandle<JournalEntriesListController> ChoicesListController
-		{
-			get => GetPropertyValue<CWeakHandle<JournalEntriesListController>>();
-			set => SetPropertyValue<CWeakHandle<JournalEntriesListController>>(value);
-		}
-
-		[Ordinal(6)] 
 		[RED("scrollController")] 
 		public CWeakHandle<inkScrollController> ScrollController
 		{
@@ -52,7 +28,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CWeakHandle<inkScrollController>>(value);
 		}
 
-		[Ordinal(7)] 
+		[Ordinal(4)] 
 		[RED("journalManager")] 
 		public CWeakHandle<gameJournalManager> JournalManager
 		{
@@ -60,15 +36,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CWeakHandle<gameJournalManager>>(value);
 		}
 
-		[Ordinal(8)] 
-		[RED("replyOptions")] 
-		public CArray<CWeakHandle<gameJournalEntry>> ReplyOptions
-		{
-			get => GetPropertyValue<CArray<CWeakHandle<gameJournalEntry>>>();
-			set => SetPropertyValue<CArray<CWeakHandle<gameJournalEntry>>>(value);
-		}
-
-		[Ordinal(9)] 
+		[Ordinal(5)] 
 		[RED("messages")] 
 		public CArray<CWeakHandle<gameJournalEntry>> Messages
 		{
@@ -76,7 +44,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CArray<CWeakHandle<gameJournalEntry>>>(value);
 		}
 
-		[Ordinal(10)] 
+		[Ordinal(6)] 
 		[RED("parentEntry")] 
 		public CWeakHandle<gameJournalEntry> ParentEntry
 		{
@@ -84,7 +52,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CWeakHandle<gameJournalEntry>>(value);
 		}
 
-		[Ordinal(11)] 
+		[Ordinal(7)] 
 		[RED("singleThreadMode")] 
 		public CBool SingleThreadMode
 		{
@@ -92,7 +60,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CBool>(value);
 		}
 
-		[Ordinal(12)] 
+		[Ordinal(8)] 
 		[RED("newMessageAninmProxy")] 
 		public CHandle<inkanimProxy> NewMessageAninmProxy
 		{

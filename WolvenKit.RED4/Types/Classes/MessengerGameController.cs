@@ -105,6 +105,7 @@ namespace WolvenKit.RED4.Types
 			ButtonHintsManagerRef = new();
 			ContactsRef = new();
 			DialogRef = new();
+			CustomDialogRef = new();
 			VirtualList = new();
 
 			PostConstruct();
