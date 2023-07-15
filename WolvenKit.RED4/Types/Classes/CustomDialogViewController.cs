@@ -70,10 +70,6 @@ namespace WolvenKit.RED4.Types
 
 		public CustomDialogViewController()
 		{
-			MessagesList = new();
-			ChoicesList = new();
-			ReplayFluff = new();
-			ReplyOptions = new();
 			Messages = new();
 
 			PostConstruct();
