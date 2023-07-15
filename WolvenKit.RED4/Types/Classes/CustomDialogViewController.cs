@@ -14,7 +14,7 @@ namespace WolvenKit.RED4.Types
 
 		[Ordinal(2)] 
 		[RED("messagesListController")] 
-		public CWeakHandle<JournalEntriesListController> CustomEntriesListController
+		public CWeakHandle<CustomEntriesListController> CustomEntriesListController
 		{
 			get => GetPropertyValue<CWeakHandle<CustomEntriesListController>>();
 			set => SetPropertyValue<CWeakHandle<CustomEntriesListController>>(value);
