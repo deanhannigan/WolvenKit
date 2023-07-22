@@ -1359,9 +1359,7 @@ public class ReferenceResolver<T> where T : class
         {
             
             string json = JsonSerializer.Serialize(ReferenceIdToObjectMap);
-            _loggerService.Info($"referenceId failed: {referenceId}");
-            _loggerService.Info($"JSON ReferenceIdToObjectMap out: {json}");
-            throw new JsonException();
+            throw new JsonException(json);
         }
 
         return value;
