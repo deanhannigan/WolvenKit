@@ -1358,7 +1358,8 @@ public class ReferenceResolver<T> where T : class
     {
         if (!ReferenceIdToObjectMap.TryGetValue(referenceId, out var value))
         {
-            string json = JsonConvert.SerializeObject(ReferenceIdToObjectMap, Formatting.None);
+            
+            string json = JsonSerializer.Serialize(ReferenceIdToObjectMap);
             _loggerService.Info($"referenceId failed: {referenceId}");
             _loggerService.Info($"JSON ReferenceIdToObjectMap out: {json}");
             throw new JsonException();
