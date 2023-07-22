@@ -12,6 +12,7 @@ using WolvenKit.Core.Extensions;
 using WolvenKit.RED4.Archive.Buffer;
 using WolvenKit.RED4.Archive.CR2W;
 using WolvenKit.RED4.Types;
+using Newtonsoft.Json;
 
 namespace WolvenKit.RED4.CR2W.JSON;
 
@@ -1357,6 +1358,9 @@ public class ReferenceResolver<T> where T : class
     {
         if (!ReferenceIdToObjectMap.TryGetValue(referenceId, out var value))
         {
+            string json = JsonConvert.SerializeObject(ReferenceIdToObjectMap, Formatting.None);
+            _loggerService.Info($"referenceId failed: {referenceId}");
+            _loggerService.Info($"JSON ReferenceIdToObjectMap out: {json}");
             throw new JsonException();
         }
 
