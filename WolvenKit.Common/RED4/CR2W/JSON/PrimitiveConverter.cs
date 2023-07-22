@@ -12,7 +12,6 @@ using WolvenKit.Core.Extensions;
 using WolvenKit.RED4.Archive.Buffer;
 using WolvenKit.RED4.Archive.CR2W;
 using WolvenKit.RED4.Types;
-using Newtonsoft.Json;
 
 namespace WolvenKit.RED4.CR2W.JSON;
 
