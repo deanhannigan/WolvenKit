@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class SurveillanceSystemControllerPS : DeviceSystemBaseControllerPS
 	{
-		[Ordinal(106)] 
+		[Ordinal(109)] 
 		[RED("isRevealingEnemies")] 
 		public CBool IsRevealingEnemies
 		{
@@ -15,7 +15,7 @@ namespace WolvenKit.RED4.Types
 		public SurveillanceSystemControllerPS()
 		{
 			DeviceName = "LocKey#50770";
-			TweakDBRecord = 115663064038;
+			TweakDBRecord = "Devices.SurveillanceSystem";
 			TweakDBDescriptionRecord = 164957373923;
 
 			PostConstruct();

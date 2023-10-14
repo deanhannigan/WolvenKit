@@ -125,6 +125,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(15)] 
+		[RED("quickhackPanelKeepContext")] 
+		public gamebbScriptID_Bool QuickhackPanelKeepContext
+		{
+			get => GetPropertyValue<gamebbScriptID_Bool>();
+			set => SetPropertyValue<gamebbScriptID_Bool>(value);
+		}
+
+		[Ordinal(16)] 
 		[RED("dpadHintRefresh")] 
 		public gamebbScriptID_Bool DpadHintRefresh
 		{
@@ -132,7 +140,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<gamebbScriptID_Bool>(value);
 		}
 
-		[Ordinal(16)] 
+		[Ordinal(17)] 
 		[RED("containerConsumable")] 
 		public gamebbScriptID_Variant ContainerConsumable
 		{
@@ -140,7 +148,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<gamebbScriptID_Variant>(value);
 		}
 
-		[Ordinal(17)] 
+		[Ordinal(18)] 
 		[RED("consumableBeingUsed")] 
 		public gamebbScriptID_Variant ConsumableBeingUsed
 		{
@@ -150,24 +158,25 @@ namespace WolvenKit.RED4.Types
 
 		public UI_QuickSlotsDataDef()
 		{
-			UIRadialContextRequest = new();
-			UIRadialContextRightStickAngle = new();
-			LeftStick = new();
-			DPadCommand = new();
-			KeyboardCommand = new();
-			WheelInteractionStarted = new();
-			WheelInteractionEnded = new();
-			CyberwareAssignmentComplete = new();
-			WheelAssignmentComplete = new();
-			QuickSlotsStructure = new();
-			ActiveQuickSlotItem = new();
-			QuickSlotsActiveWeaponIndex = new();
-			QuickhackPanelOpen = new();
-			QuickHackDescritpionVisible = new();
-			QuickHackDataSelected = new();
-			DpadHintRefresh = new();
-			ContainerConsumable = new();
-			ConsumableBeingUsed = new();
+			UIRadialContextRequest = new gamebbScriptID_Bool();
+			UIRadialContextRightStickAngle = new gamebbScriptID_Float();
+			LeftStick = new gamebbScriptID_Vector4();
+			DPadCommand = new gamebbScriptID_Variant();
+			KeyboardCommand = new gamebbScriptID_Variant();
+			WheelInteractionStarted = new gamebbScriptID_Variant();
+			WheelInteractionEnded = new gamebbScriptID_Variant();
+			CyberwareAssignmentComplete = new gamebbScriptID_Bool();
+			WheelAssignmentComplete = new gamebbScriptID_Bool();
+			QuickSlotsStructure = new gamebbScriptID_Variant();
+			ActiveQuickSlotItem = new gamebbScriptID_Variant();
+			QuickSlotsActiveWeaponIndex = new gamebbScriptID_Int32();
+			QuickhackPanelOpen = new gamebbScriptID_Bool();
+			QuickHackDescritpionVisible = new gamebbScriptID_Bool();
+			QuickHackDataSelected = new gamebbScriptID_Variant();
+			QuickhackPanelKeepContext = new gamebbScriptID_Bool();
+			DpadHintRefresh = new gamebbScriptID_Bool();
+			ContainerConsumable = new gamebbScriptID_Variant();
+			ConsumableBeingUsed = new gamebbScriptID_Variant();
 
 			PostConstruct();
 		}

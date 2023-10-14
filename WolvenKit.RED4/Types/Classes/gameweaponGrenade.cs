@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class gameweaponGrenade : gameItemObject
 	{
-		[Ordinal(38)] 
+		[Ordinal(40)] 
 		[RED("lastHitNormal")] 
 		public Vector4 LastHitNormal
 		{
@@ -12,7 +12,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<Vector4>(value);
 		}
 
-		[Ordinal(39)] 
+		[Ordinal(41)] 
 		[RED("deliveryMethod")] 
 		public CEnum<gamedataGrenadeDeliveryMethodType> DeliveryMethod
 		{
@@ -22,7 +22,7 @@ namespace WolvenKit.RED4.Types
 
 		public gameweaponGrenade()
 		{
-			LastHitNormal = new();
+			LastHitNormal = new Vector4();
 
 			PostConstruct();
 		}

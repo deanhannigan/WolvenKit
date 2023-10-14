@@ -70,10 +70,10 @@ namespace WolvenKit.RED4.Types
 
 		[Ordinal(11)] 
 		[RED("listController")] 
-		public CWeakHandle<MessengerContactsVirtualNestedListController> ListController
+		public CWeakHandle<SimpleMessengerContactsVirtualListController> ListController
 		{
-			get => GetPropertyValue<CWeakHandle<MessengerContactsVirtualNestedListController>>();
-			set => SetPropertyValue<CWeakHandle<MessengerContactsVirtualNestedListController>>(value);
+			get => GetPropertyValue<CWeakHandle<SimpleMessengerContactsVirtualListController>>();
+			set => SetPropertyValue<CWeakHandle<SimpleMessengerContactsVirtualListController>>(value);
 		}
 
 		[Ordinal(12)] 

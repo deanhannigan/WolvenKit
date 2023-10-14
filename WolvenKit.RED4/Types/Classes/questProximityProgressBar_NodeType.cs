@@ -68,6 +68,14 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<gameEntityReference>(value);
 		}
 
+		[Ordinal(8)] 
+		[RED("appearance")] 
+		public CName Appearance
+		{
+			get => GetPropertyValue<CName>();
+			set => SetPropertyValue<CName>(value);
+		}
+
 		public questProximityProgressBar_NodeType()
 		{
 			Show = true;
@@ -75,9 +83,9 @@ namespace WolvenKit.RED4.Types
 			Reset = true;
 			Distance = 10.000000F;
 			DistanceComparisonType = Enums.EComparisonType.Less;
-			Target = new() { Names = new() };
+			Target = new gameEntityReference { Names = new() };
 			IsPlayerActivator = true;
-			Activator = new() { Names = new() };
+			Activator = new gameEntityReference { Names = new() };
 
 			PostConstruct();
 		}

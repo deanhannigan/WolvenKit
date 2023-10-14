@@ -77,6 +77,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(24)] 
+		[RED("isSceneCarrying")] 
+		public CBool IsSceneCarrying
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(25)] 
 		[RED("cameraParallaxWeight")] 
 		public CFloat CameraParallaxWeight
 		{
@@ -84,7 +92,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(25)] 
+		[Ordinal(26)] 
 		[RED("cameraParallaxSpace")] 
 		public CEnum<scnfppParallaxSpace> CameraParallaxSpace
 		{
@@ -92,7 +100,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CEnum<scnfppParallaxSpace>>(value);
 		}
 
-		[Ordinal(26)] 
+		[Ordinal(27)] 
 		[RED("vehicleProceduralCameraWeight")] 
 		public CFloat VehicleProceduralCameraWeight
 		{
@@ -100,7 +108,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(27)] 
+		[Ordinal(28)] 
 		[RED("yawLimitLeft")] 
 		public CFloat YawLimitLeft
 		{
@@ -108,7 +116,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(28)] 
+		[Ordinal(29)] 
 		[RED("yawLimitRight")] 
 		public CFloat YawLimitRight
 		{
@@ -116,7 +124,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(29)] 
+		[Ordinal(30)] 
 		[RED("pitchLimitTop")] 
 		public CFloat PitchLimitTop
 		{
@@ -124,7 +132,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(30)] 
+		[Ordinal(31)] 
 		[RED("pitchLimitBottom")] 
 		public CFloat PitchLimitBottom
 		{
@@ -132,7 +140,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(31)] 
+		[Ordinal(32)] 
 		[RED("genderSpecificParams")] 
 		public CArray<scnfppGenderSpecificParams> GenderSpecificParams
 		{
@@ -142,10 +150,10 @@ namespace WolvenKit.RED4.Types
 
 		public scnPlayFPPControlAnimEvent()
 		{
-			Id = new() { Id = 18446744073709551615 };
+			Id = new scnSceneEventId { Id = long.MaxValue };
 			Duration = 1000;
-			AnimData = new() { Basic = new() { Stretch = 1.000000F, BlendInCurve = Enums.scnEasingType.SinusoidalEaseInOut, BlendOutCurve = Enums.scnEasingType.SinusoidalEaseInOut }, Weight = 1.000000F };
-			Performer = new() { Id = 4294967040 };
+			AnimData = new scneventsPlayAnimEventExData { Basic = new scneventsPlayAnimEventData { Stretch = 1.000000F, BlendInCurve = Enums.scnEasingType.SinusoidalEaseInOut, BlendOutCurve = Enums.scnEasingType.SinusoidalEaseInOut }, Weight = 1.000000F };
+			Performer = new scnPerformerId { Id = 4294967040 };
 			NeckWeight = 1.000000F;
 			UpperFaceBlendAdditive = true;
 			LowerFaceBlendAdditive = true;

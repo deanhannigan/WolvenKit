@@ -85,6 +85,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(12)] 
+		[RED("purelyDirect")] 
+		public CBool PurelyDirect
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(13)] 
 		[RED("id")] 
 		public CUInt32 Id
 		{
@@ -94,9 +102,9 @@ namespace WolvenKit.RED4.Types
 
 		public senseStimuliEvent()
 		{
-			StimInvestigateData = new() { DistrationPoint = new(), AttackInstigatorPosition = new(), InvestigationSpots = new() };
+			StimInvestigateData = new senseStimInvestigateData { DistrationPoint = new Vector4(), AttackInstigatorPosition = new Vector4(), InvestigationSpots = new() };
 			MovePositions = new();
-			SourcePosition = new();
+			SourcePosition = new Vector4 { W = 1.000000F };
 			StimType = Enums.gamedataStimType.Invalid;
 			StimPropagation = Enums.gamedataStimPropagation.Invalid;
 

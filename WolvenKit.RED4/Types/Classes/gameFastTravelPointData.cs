@@ -29,6 +29,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(3)] 
+		[RED("isEP1")] 
+		public CBool IsEP1
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(4)] 
 		[RED("mappinID")] 
 		public gameNewMappinID MappinID
 		{
@@ -38,8 +46,8 @@ namespace WolvenKit.RED4.Types
 
 		public gameFastTravelPointData()
 		{
-			RequesterID = new();
-			MappinID = new();
+			RequesterID = new entEntityID();
+			MappinID = new gameNewMappinID();
 
 			PostConstruct();
 		}

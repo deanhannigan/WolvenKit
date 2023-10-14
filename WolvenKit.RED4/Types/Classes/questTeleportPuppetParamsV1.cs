@@ -29,14 +29,6 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(3)] 
-		[RED("resetLookAt")] 
-		public CBool ResetLookAt
-		{
-			get => GetPropertyValue<CBool>();
-			set => SetPropertyValue<CBool>(value);
-		}
-
-		[Ordinal(4)] 
 		[RED("useFastTravelMechanism")] 
 		public CBool UseFastTravelMechanism
 		{
@@ -44,7 +36,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CBool>(value);
 		}
 
-		[Ordinal(5)] 
+		[Ordinal(4)] 
 		[RED("healAtTeleport")] 
 		public CBool HealAtTeleport
 		{
@@ -54,8 +46,7 @@ namespace WolvenKit.RED4.Types
 
 		public questTeleportPuppetParamsV1()
 		{
-			DestinationOffset = new();
-			ResetLookAt = true;
+			DestinationOffset = new Vector3();
 			HealAtTeleport = true;
 
 			PostConstruct();

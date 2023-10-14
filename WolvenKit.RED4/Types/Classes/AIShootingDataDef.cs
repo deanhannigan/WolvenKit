@@ -101,6 +101,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(12)] 
+		[RED("lastChargeLevel")] 
+		public gamebbScriptID_Float LastChargeLevel
+		{
+			get => GetPropertyValue<gamebbScriptID_Float>();
+			set => SetPropertyValue<gamebbScriptID_Float>(value);
+		}
+
+		[Ordinal(13)] 
 		[RED("fullyCharged")] 
 		public gamebbScriptID_Bool FullyCharged
 		{
@@ -108,7 +116,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<gamebbScriptID_Bool>(value);
 		}
 
-		[Ordinal(13)] 
+		[Ordinal(14)] 
 		[RED("weaponOverheated")] 
 		public gamebbScriptID_Bool WeaponOverheated
 		{
@@ -116,7 +124,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<gamebbScriptID_Bool>(value);
 		}
 
-		[Ordinal(14)] 
+		[Ordinal(15)] 
 		[RED("requestedTriggerMode")] 
 		public gamebbScriptID_Int32 RequestedTriggerMode
 		{
@@ -124,23 +132,33 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<gamebbScriptID_Int32>(value);
 		}
 
+		[Ordinal(16)] 
+		[RED("shootingFromCar")] 
+		public gamebbScriptID_Bool ShootingFromCar
+		{
+			get => GetPropertyValue<gamebbScriptID_Bool>();
+			set => SetPropertyValue<gamebbScriptID_Bool>(value);
+		}
+
 		public AIShootingDataDef()
 		{
-			ShootingPatternPackage = new();
-			ShootingPattern = new();
-			PatternList = new();
-			RightArmLookAtLimitReached = new();
-			TotalShotsFired = new();
-			ShotsInBurstFired = new();
-			DesiredNumberOfShots = new();
-			NextShotTimeStamp = new();
-			ShotTimeStamp = new();
-			MaxChargedTimeStamp = new();
-			ChargeStartTimeStamp = new();
-			PauseConditionCheckTimeStamp = new();
-			FullyCharged = new();
-			WeaponOverheated = new();
-			RequestedTriggerMode = new();
+			ShootingPatternPackage = new gamebbScriptID_Variant();
+			ShootingPattern = new gamebbScriptID_Variant();
+			PatternList = new gamebbScriptID_Variant();
+			RightArmLookAtLimitReached = new gamebbScriptID_Int32();
+			TotalShotsFired = new gamebbScriptID_Int32();
+			ShotsInBurstFired = new gamebbScriptID_Int32();
+			DesiredNumberOfShots = new gamebbScriptID_Int32();
+			NextShotTimeStamp = new gamebbScriptID_Float();
+			ShotTimeStamp = new gamebbScriptID_Float();
+			MaxChargedTimeStamp = new gamebbScriptID_Float();
+			ChargeStartTimeStamp = new gamebbScriptID_Float();
+			PauseConditionCheckTimeStamp = new gamebbScriptID_Float();
+			LastChargeLevel = new gamebbScriptID_Float();
+			FullyCharged = new gamebbScriptID_Bool();
+			WeaponOverheated = new gamebbScriptID_Bool();
+			RequestedTriggerMode = new gamebbScriptID_Int32();
+			ShootingFromCar = new gamebbScriptID_Bool();
 
 			PostConstruct();
 		}

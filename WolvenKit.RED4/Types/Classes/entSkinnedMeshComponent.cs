@@ -22,18 +22,18 @@ namespace WolvenKit.RED4.Types
 
 		[Ordinal(12)] 
 		[RED("castShadows")] 
-		public CBool CastShadows
+		public CEnum<shadowsShadowCastingMode> CastShadows
 		{
-			get => GetPropertyValue<CBool>();
-			set => SetPropertyValue<CBool>(value);
+			get => GetPropertyValue<CEnum<shadowsShadowCastingMode>>();
+			set => SetPropertyValue<CEnum<shadowsShadowCastingMode>>(value);
 		}
 
 		[Ordinal(13)] 
 		[RED("castLocalShadows")] 
-		public CBool CastLocalShadows
+		public CEnum<shadowsShadowCastingMode> CastLocalShadows
 		{
-			get => GetPropertyValue<CBool>();
-			set => SetPropertyValue<CBool>(value);
+			get => GetPropertyValue<CEnum<shadowsShadowCastingMode>>();
+			set => SetPropertyValue<CEnum<shadowsShadowCastingMode>>(value);
 		}
 
 		[Ordinal(14)] 
@@ -124,20 +124,26 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<NavGenNavigationSetting>(value);
 		}
 
+		[Ordinal(25)] 
+		[RED("version")] 
+		public CUInt8 Version
+		{
+			get => GetPropertyValue<CUInt8>();
+			set => SetPropertyValue<CUInt8>(value);
+		}
+
 		public entSkinnedMeshComponent()
 		{
 			Name = "Component";
-			LocalTransform = new() { Position = new() { X = new(), Y = new(), Z = new() }, Orientation = new() { R = 1.000000F } };
+			LocalTransform = new WorldTransform { Position = new WorldPosition { X = new FixedPoint(), Y = new FixedPoint(), Z = new FixedPoint() }, Orientation = new Quaternion { R = 1.000000F } };
 			RenderSceneLayerMask = Enums.RenderSceneLayerMask.Default;
 			ForceLODLevel = -1;
 			MeshAppearance = "default";
-			CastShadows = true;
-			CastLocalShadows = true;
 			AcceptDismemberment = true;
-			ChunkMask = 18446744073709551615;
+			ChunkMask = long.MaxValue;
 			IsEnabled = true;
 			OverrideMeshNavigationImpact = true;
-			NavigationImpact = new() { NavmeshImpact = Enums.NavGenNavmeshImpact.Ignored };
+			NavigationImpact = new NavGenNavigationSetting { NavmeshImpact = Enums.NavGenNavmeshImpact.Ignored };
 
 			PostConstruct();
 		}

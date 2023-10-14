@@ -20,10 +20,18 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<gameEntityReference>(value);
 		}
 
+		[Ordinal(2)] 
+		[RED("audioOverrideAppearanceName")] 
+		public CName AudioOverrideAppearanceName
+		{
+			get => GetPropertyValue<CName>();
+			set => SetPropertyValue<CName>(value);
+		}
+
 		public questReplacer_NodeType()
 		{
 			Enable = true;
-			ObjectRef = new() { Names = new() };
+			ObjectRef = new gameEntityReference { Names = new() };
 
 			PostConstruct();
 		}

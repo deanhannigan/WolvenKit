@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class BlindingLightControllerPS : BasicDistractionDeviceControllerPS
 	{
-		[Ordinal(109)] 
+		[Ordinal(113)] 
 		[RED("reflectorSFX")] 
 		public ReflectorSFX ReflectorSFX
 		{
@@ -15,9 +15,9 @@ namespace WolvenKit.RED4.Types
 		public BlindingLightControllerPS()
 		{
 			DeviceName = "LocKey#168";
-			TweakDBRecord = 83448043739;
+			TweakDBRecord = "Devices.MetroLights";
 			TweakDBDescriptionRecord = 137244048802;
-			ReflectorSFX = new() { Distraction = "dev_reflector_distraction", TurnOn = "dev_reflector_turn_on_loop", TurnOff = "dev_reflector_turn_on_loop_stop" };
+			ReflectorSFX = new ReflectorSFX { Distraction = "dev_reflector_distraction", TurnOn = "dev_reflector_turn_on_loop", TurnOff = "dev_reflector_turn_on_loop_stop" };
 
 			PostConstruct();
 		}

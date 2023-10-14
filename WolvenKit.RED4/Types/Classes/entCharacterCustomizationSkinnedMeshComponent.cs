@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class entCharacterCustomizationSkinnedMeshComponent : entSkinnedMeshComponent
 	{
-		[Ordinal(25)] 
+		[Ordinal(26)] 
 		[RED("tags")] 
 		public redTagList Tags
 		{
@@ -14,7 +14,7 @@ namespace WolvenKit.RED4.Types
 
 		public entCharacterCustomizationSkinnedMeshComponent()
 		{
-			Tags = new() { Tags = new() };
+			Tags = new redTagList { Tags = new() };
 
 			PostConstruct();
 		}

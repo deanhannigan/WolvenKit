@@ -44,13 +44,22 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<gamebbScriptID_Bool>(value);
 		}
 
+		[Ordinal(5)] 
+		[RED("IsPlayerInterestingFromSecuritySystemPOV")] 
+		public gamebbScriptID_Bool IsPlayerInterestingFromSecuritySystemPOV
+		{
+			get => GetPropertyValue<gamebbScriptID_Bool>();
+			set => SetPropertyValue<gamebbScriptID_Bool>(value);
+		}
+
 		public PuppetDef()
 		{
-			IsCrowd = new();
-			HideNameplate = new();
-			ForceFriendlyCarry = new();
-			ForcedCarryStyle = new();
-			HasCPOMissionData = new();
+			IsCrowd = new gamebbScriptID_Bool();
+			HideNameplate = new gamebbScriptID_Bool();
+			ForceFriendlyCarry = new gamebbScriptID_Bool();
+			ForcedCarryStyle = new gamebbScriptID_Int32();
+			HasCPOMissionData = new gamebbScriptID_Bool();
+			IsPlayerInterestingFromSecuritySystemPOV = new gamebbScriptID_Bool();
 
 			PostConstruct();
 		}

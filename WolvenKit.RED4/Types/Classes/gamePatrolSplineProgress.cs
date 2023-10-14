@@ -2,7 +2,7 @@ using static WolvenKit.RED4.Types.Enums;
 
 namespace WolvenKit.RED4.Types
 {
-	public partial class gamePatrolSplineProgress : ISerializable
+	public partial class gamePatrolSplineProgress : IScriptable
 	{
 		[Ordinal(0)] 
 		[RED("currentControlPoints")] 
@@ -32,7 +32,7 @@ namespace WolvenKit.RED4.Types
 		{
 			CurrentControlPoints = new();
 			EntrySplineParam = -1.000000F;
-			ControlPointIndex = 4294967295;
+			ControlPointIndex = uint.MaxValue;
 
 			PostConstruct();
 		}

@@ -53,6 +53,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(6)] 
+		[RED("clearAssignedVehicleIdWhenUnmounting")] 
+		public CBool ClearAssignedVehicleIdWhenUnmounting
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(7)] 
 		[RED("entryAnimName")] 
 		public CName EntryAnimName
 		{
@@ -60,7 +68,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CName>(value);
 		}
 
-		[Ordinal(7)] 
+		[Ordinal(8)] 
 		[RED("entrySlotName")] 
 		public CName EntrySlotName
 		{
@@ -70,8 +78,8 @@ namespace WolvenKit.RED4.Types
 
 		public questAssignCharacter_NodeType()
 		{
-			CharacterRef = new() { Names = new() };
-			VehicleRef = new() { Names = new() };
+			CharacterRef = new gameEntityReference { Names = new() };
+			VehicleRef = new gameEntityReference { Names = new() };
 			Assign = true;
 			SlotName = "seat_front_left";
 			EntrySlotName = "default";

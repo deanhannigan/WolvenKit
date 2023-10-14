@@ -20,11 +20,19 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<gameuiCharacterCustomizationBrokenNoseControllerBrokenNoseAppearance>(value);
 		}
 
+		[Ordinal(5)] 
+		[RED("finalSceneGroup")] 
+		public CName FinalSceneGroup
+		{
+			get => GetPropertyValue<CName>();
+			set => SetPropertyValue<CName>(value);
+		}
+
 		public gameuiCharacterCustomizationBrokenNoseController()
 		{
 			Name = "Component";
-			Stage1App = new();
-			Stage2App = new();
+			Stage1App = new gameuiCharacterCustomizationBrokenNoseControllerBrokenNoseAppearance();
+			Stage2App = new gameuiCharacterCustomizationBrokenNoseControllerBrokenNoseAppearance();
 
 			PostConstruct();
 		}

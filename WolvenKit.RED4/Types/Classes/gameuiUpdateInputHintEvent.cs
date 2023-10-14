@@ -30,7 +30,7 @@ namespace WolvenKit.RED4.Types
 
 		public gameuiUpdateInputHintEvent()
 		{
-			Data = new();
+			Data = new gameuiInputHintData { HoldIndicationType = Enums.inkInputHintHoldIndicationType.Press };
 
 			PostConstruct();
 		}

@@ -21,6 +21,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(3)] 
+		[RED("name")] 
+		public inkTextWidgetReference Name
+		{
+			get => GetPropertyValue<inkTextWidgetReference>();
+			set => SetPropertyValue<inkTextWidgetReference>(value);
+		}
+
+		[Ordinal(4)] 
 		[RED("diffValue")] 
 		public inkTextWidgetReference DiffValue
 		{
@@ -30,9 +38,10 @@ namespace WolvenKit.RED4.Types
 
 		public ProgramTooltipStatController()
 		{
-			Arrow = new();
-			Value = new();
-			DiffValue = new();
+			Arrow = new inkImageWidgetReference();
+			Value = new inkTextWidgetReference();
+			Name = new inkTextWidgetReference();
+			DiffValue = new inkTextWidgetReference();
 
 			PostConstruct();
 		}

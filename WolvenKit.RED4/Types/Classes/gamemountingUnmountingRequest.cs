@@ -20,9 +20,17 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CHandle<gameMountEventData>>(value);
 		}
 
+		[Ordinal(2)] 
+		[RED("delay")] 
+		public CFloat Delay
+		{
+			get => GetPropertyValue<CFloat>();
+			set => SetPropertyValue<CFloat>(value);
+		}
+
 		public gamemountingUnmountingRequest()
 		{
-			LowLevelMountingInfo = new() { ChildId = new(), ParentId = new(), SlotId = new() };
+			LowLevelMountingInfo = new gamemountingMountingInfo { ChildId = new entEntityID(), ParentId = new entEntityID(), SlotId = new gamemountingMountingSlotId() };
 
 			PostConstruct();
 		}

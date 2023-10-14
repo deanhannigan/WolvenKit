@@ -270,6 +270,14 @@ public partial class AppViewModel : ObservableObject/*, IAppViewModel*/
                     DockedViews.Add(vm);
                     return true;
                 }
+                case EDockedViews.HashToolViewModel:
+                {
+                    var vm = _paneViewModelFactory.HashToolViewModel();
+                    vm.State = DockState.Dock;
+                    vm.SideInDockedMode = DockSide.Right;
+                    DockedViews.Add(vm);
+                    return true;
+                }
                 default:
                     break;
             }
@@ -1154,6 +1162,14 @@ public partial class AppViewModel : ObservableObject/*, IAppViewModel*/
         DockedViews.Add(vm);
     }
 
+    [RelayCommand]
+    private void ShowHashTool()
+    {
+        var vm = _paneViewModelFactory.HashToolViewModel();
+        vm.State = DockState.Float;
+        DockedViews.Add(vm);
+    }
+
     public string CyberpunkBlenderAddonLink = "https://github.com/WolvenKit/Cyberpunk-Blender-add-on";
     public string WolvenKitSetupLink = "https://wiki.redmodding.org/wolvenkit/getting-started/setup";
     public string WolvenKitCreatingAModLink = "https://wiki.redmodding.org/wolvenkit/getting-started/creating-a-mod";
@@ -1447,7 +1463,13 @@ public partial class AppViewModel : ObservableObject/*, IAppViewModel*/
             return;
         }
 
-        await _tweakDBService.LoadDB(Path.Combine(_settingsManager.GetRED4GameRootDir(), "r6", "cache", "tweakdb.bin"));
+        var dbPath = Path.Combine(_settingsManager.GetRED4GameRootDir(), "r6", "cache", "tweakdb_ep1.bin");
+        if (!File.Exists(dbPath))
+        {
+            dbPath = Path.Combine(_settingsManager.GetRED4GameRootDir(), "r6", "cache", "tweakdb.bin");
+        }
+
+        await _tweakDBService.LoadDB(dbPath);
     }
 
     /// <summary>

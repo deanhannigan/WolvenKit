@@ -76,9 +76,17 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CHandle<AITargetTrackerComponent>>(value);
 		}
 
+		[Ordinal(14)] 
+		[RED("weakspotDestroyed")] 
+		public CBool WeakspotDestroyed
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
 		public OdaComponent()
 		{
-			Owner_id = new();
+			Owner_id = new entEntityID();
 
 			PostConstruct();
 		}

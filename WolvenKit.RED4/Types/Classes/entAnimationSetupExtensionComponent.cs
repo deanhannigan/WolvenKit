@@ -13,6 +13,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(4)] 
+		[RED("isOverrideContainer")] 
+		public CBool IsOverrideContainer
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(5)] 
 		[RED("controlBinding")] 
 		public CHandle<entAnimationControlBinding> ControlBinding
 		{
@@ -23,7 +31,7 @@ namespace WolvenKit.RED4.Types
 		public entAnimationSetupExtensionComponent()
 		{
 			Name = "Component";
-			Animations = new() { Cinematics = new(), Gameplay = new() };
+			Animations = new animAnimSetup { Cinematics = new(), Gameplay = new() };
 
 			PostConstruct();
 		}

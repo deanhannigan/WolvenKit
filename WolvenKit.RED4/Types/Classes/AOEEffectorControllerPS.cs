@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class AOEEffectorControllerPS : ActivatedDeviceControllerPS
 	{
-		[Ordinal(108)] 
+		[Ordinal(111)] 
 		[RED("effectsToPlay")] 
 		public CArray<CName> EffectsToPlay
 		{
@@ -15,7 +15,7 @@ namespace WolvenKit.RED4.Types
 		public AOEEffectorControllerPS()
 		{
 			DeviceState = Enums.EDeviceStatus.OFF;
-			TweakDBRecord = 87263028572;
+			TweakDBRecord = "Devices.AOE_Effector";
 			TweakDBDescriptionRecord = 139452770593;
 			EffectsToPlay = new();
 

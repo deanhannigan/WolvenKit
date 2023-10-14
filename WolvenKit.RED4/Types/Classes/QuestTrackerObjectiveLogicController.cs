@@ -70,10 +70,10 @@ namespace WolvenKit.RED4.Types
 
 		public QuestTrackerObjectiveLogicController()
 		{
-			ObjectiveTitle = new();
-			TrackingIcon = new();
-			TrackingFrame = new();
-			AnimOptions = new();
+			ObjectiveTitle = new inkTextWidgetReference();
+			TrackingIcon = new inkWidgetReference();
+			TrackingFrame = new inkWidgetReference();
+			AnimOptions = new inkanimPlaybackOptions { CustomTimeDilation = 1.000000F };
 
 			PostConstruct();
 		}

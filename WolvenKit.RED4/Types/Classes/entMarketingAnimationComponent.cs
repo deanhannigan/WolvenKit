@@ -37,6 +37,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(9)] 
+		[RED("lookAtCamera")] 
+		public CBool LookAtCamera
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(10)] 
 		[RED("lookAtOrbitDistance")] 
 		public CFloat LookAtOrbitDistance
 		{
@@ -44,7 +52,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(10)] 
+		[Ordinal(11)] 
 		[RED("lookAtTargetPitch")] 
 		public CFloat LookAtTargetPitch
 		{
@@ -52,7 +60,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(11)] 
+		[Ordinal(12)] 
 		[RED("lookAtTargetYaw")] 
 		public CFloat LookAtTargetYaw
 		{
@@ -63,7 +71,7 @@ namespace WolvenKit.RED4.Types
 		public entMarketingAnimationComponent()
 		{
 			Name = "Component";
-			LocalTransform = new() { Position = new() { X = new(), Y = new(), Z = new() }, Orientation = new() { R = 1.000000F } };
+			LocalTransform = new WorldTransform { Position = new WorldPosition { X = new FixedPoint(), Y = new FixedPoint(), Z = new FixedPoint() }, Orientation = new Quaternion { R = 1.000000F } };
 			FreezeAnimations = true;
 			Animations = new();
 			LookAtOrbitDistance = 3.000000F;

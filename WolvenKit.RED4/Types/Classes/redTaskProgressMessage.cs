@@ -13,6 +13,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(1)] 
+		[RED("parent")] 
+		public CUInt32 Parent
+		{
+			get => GetPropertyValue<CUInt32>();
+			set => SetPropertyValue<CUInt32>(value);
+		}
+
+		[Ordinal(2)] 
 		[RED("progress")] 
 		public CFloat Progress
 		{
@@ -20,7 +28,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(2)] 
+		[Ordinal(3)] 
 		[RED("processingTime")] 
 		public CFloat ProcessingTime
 		{
@@ -30,7 +38,8 @@ namespace WolvenKit.RED4.Types
 
 		public redTaskProgressMessage()
 		{
-			Id = 4294967295;
+			Id = uint.MaxValue;
+			Parent = uint.MaxValue;
 
 			PostConstruct();
 		}

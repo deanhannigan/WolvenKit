@@ -46,8 +46,7 @@ namespace WolvenKit.RED4.Types
 
 		public AIInjectCombatThreatCommandParams()
 		{
-			TargetPuppetRef = new() { Names = new() };
-			Duration = -1.000000F;
+			TargetPuppetRef = new gameEntityReference { Names = new() };
 
 			PostConstruct();
 		}

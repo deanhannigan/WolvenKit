@@ -2,7 +2,7 @@ using static WolvenKit.RED4.Types.Enums;
 
 namespace WolvenKit.RED4.Types
 {
-	public partial class workIContainerEntry : workIEntry
+	public abstract partial class workIContainerEntry : workIEntry
 	{
 		[Ordinal(2)] 
 		[RED("list")] 
@@ -13,6 +13,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(3)] 
+		[RED("disableAutoTransition")] 
+		public CBool DisableAutoTransition
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(4)] 
 		[RED("idleAnim")] 
 		public CName IdleAnim
 		{

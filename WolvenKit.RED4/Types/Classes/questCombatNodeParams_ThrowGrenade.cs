@@ -37,6 +37,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(4)] 
+		[RED("force")] 
+		public CBool Force
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(5)] 
 		[RED("immediately")] 
 		public CBool Immediately
 		{
@@ -46,7 +54,7 @@ namespace WolvenKit.RED4.Types
 
 		public questCombatNodeParams_ThrowGrenade()
 		{
-			TargetOverridePuppet = new() { Names = new() };
+			TargetOverridePuppet = new gameEntityReference { Names = new() };
 			Duration = -1.000000F;
 
 			PostConstruct();

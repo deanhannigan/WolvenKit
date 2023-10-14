@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class ActionsSequencerControllerPS : MasterControllerPS
 	{
-		[Ordinal(105)] 
+		[Ordinal(108)] 
 		[RED("sequenceDuration")] 
 		public CFloat SequenceDuration
 		{
@@ -12,7 +12,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CFloat>(value);
 		}
 
-		[Ordinal(106)] 
+		[Ordinal(109)] 
 		[RED("sequencerMode")] 
 		public CEnum<EActionsSequencerMode> SequencerMode
 		{
@@ -20,7 +20,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CEnum<EActionsSequencerMode>>(value);
 		}
 
-		[Ordinal(107)] 
+		[Ordinal(110)] 
 		[RED("actionTypeToForward")] 
 		public SActionTypeForward ActionTypeToForward
 		{
@@ -28,7 +28,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<SActionTypeForward>(value);
 		}
 
-		[Ordinal(108)] 
+		[Ordinal(111)] 
 		[RED("ongoingSequence")] 
 		public ActionsSequence OngoingSequence
 		{
@@ -40,8 +40,8 @@ namespace WolvenKit.RED4.Types
 		{
 			RevealDevicesGrid = false;
 			SequenceDuration = 2.000000F;
-			ActionTypeToForward = new() { QHack = true };
-			OngoingSequence = new() { SequenceInitiator = new(), DelayIDs = new() };
+			ActionTypeToForward = new SActionTypeForward { QHack = true };
+			OngoingSequence = new ActionsSequence { SequenceInitiator = new entEntityID(), DelayIDs = new() };
 
 			PostConstruct();
 		}

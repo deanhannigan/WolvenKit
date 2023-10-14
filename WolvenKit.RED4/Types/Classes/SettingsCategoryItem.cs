@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class SettingsCategoryItem : inkListItemController
 	{
-		[Ordinal(16)] 
+		[Ordinal(19)] 
 		[RED("labelHighlight")] 
 		public inkTextWidgetReference LabelHighlight
 		{
@@ -14,7 +14,7 @@ namespace WolvenKit.RED4.Types
 
 		public SettingsCategoryItem()
 		{
-			LabelHighlight = new();
+			LabelHighlight = new inkTextWidgetReference();
 
 			PostConstruct();
 		}

@@ -69,6 +69,30 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(8)] 
+		[RED("snapToGroundStart")] 
+		public CFloat SnapToGroundStart
+		{
+			get => GetPropertyValue<CFloat>();
+			set => SetPropertyValue<CFloat>(value);
+		}
+
+		[Ordinal(9)] 
+		[RED("snapToGroundEnd")] 
+		public CFloat SnapToGroundEnd
+		{
+			get => GetPropertyValue<CFloat>();
+			set => SetPropertyValue<CFloat>(value);
+		}
+
+		[Ordinal(10)] 
+		[RED("snapToGround")] 
+		public CBool SnapToGround
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(11)] 
 		[RED("vehicleChangePhysicsState")] 
 		public CBool VehicleChangePhysicsState
 		{
@@ -76,7 +100,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CBool>(value);
 		}
 
-		[Ordinal(9)] 
+		[Ordinal(12)] 
 		[RED("vehicleEnabledPhysicsOnEnd")] 
 		public CBool VehicleEnabledPhysicsOnEnd
 		{
@@ -84,7 +108,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CBool>(value);
 		}
 
-		[Ordinal(10)] 
+		[Ordinal(13)] 
 		[RED("trajectoryLOD")] 
 		public CArray<scnAnimationMotionSample> TrajectoryLOD
 		{
@@ -94,8 +118,8 @@ namespace WolvenKit.RED4.Types
 
 		public scnPlaySkAnimRootMotionData()
 		{
-			OriginMarker = new() { Type = Enums.scnMarkerType.Global, EntityRef = new() { Names = new() }, IsMounted = true };
-			OriginOffset = new() { Position = new(), Orientation = new() { R = 1.000000F } };
+			OriginMarker = new scnMarker { Type = Enums.scnMarkerType.Global, EntityRef = new gameEntityReference { Names = new() }, IsMounted = true };
+			OriginOffset = new Transform { Position = new Vector4(), Orientation = new Quaternion { R = 1.000000F } };
 			CustomBlendInTime = -1.000000F;
 			CustomBlendInCurve = Enums.scnEasingType.SinusoidalEaseInOut;
 			RemovePitchRollRotation = true;

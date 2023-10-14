@@ -2,9 +2,9 @@ using static WolvenKit.RED4.Types.Enums;
 
 namespace WolvenKit.RED4.Types
 {
-	public partial class questIStatsScriptConditionType : questIStatsConditionType
+	public abstract partial class questIStatsScriptConditionType : questIStatsConditionType
 	{
-		[Ordinal(0)] 
+		[Ordinal(1)] 
 		[RED("scriptCondition")] 
 		public CHandle<IScriptable> ScriptCondition
 		{

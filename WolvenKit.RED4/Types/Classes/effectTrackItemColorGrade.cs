@@ -52,15 +52,33 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<ColorGradingLutParams>(value);
 		}
 
+		[Ordinal(9)] 
+		[RED("blendWithBaseLut")] 
+		public CBool BlendWithBaseLut
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(10)] 
+		[RED("mask")] 
+		public CArray<CEnum<ERenderObjectType>> Mask
+		{
+			get => GetPropertyValue<CArray<CEnum<ERenderObjectType>>>();
+			set => SetPropertyValue<CArray<CEnum<ERenderObjectType>>>(value);
+		}
+
 		public effectTrackItemColorGrade()
 		{
 			TimeDuration = 1.000000F;
-			Contrast = new();
-			Saturate = new();
-			Brightness = new();
-			LutWeight = new();
-			LutParams = new() { InputMapping = Enums.EColorMappingFunction.CMF_sRGB, OutputMapping = Enums.EColorMappingFunction.CMF_sRGB };
-			LutParamsHdr = new() { InputMapping = Enums.EColorMappingFunction.CMF_sRGB, OutputMapping = Enums.EColorMappingFunction.CMF_sRGB };
+			Contrast = new effectEffectParameterEvaluatorFloat();
+			Saturate = new effectEffectParameterEvaluatorFloat();
+			Brightness = new effectEffectParameterEvaluatorFloat();
+			LutWeight = new effectEffectParameterEvaluatorFloat();
+			LutParams = new ColorGradingLutParams { InputMapping = Enums.EColorMappingFunction.CMF_sRGB, OutputMapping = Enums.EColorMappingFunction.CMF_sRGB };
+			LutParamsHdr = new ColorGradingLutParams { InputMapping = Enums.EColorMappingFunction.CMF_sRGB, OutputMapping = Enums.EColorMappingFunction.CMF_sRGB };
+			BlendWithBaseLut = true;
+			Mask = new();
 
 			PostConstruct();
 		}

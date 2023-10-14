@@ -36,13 +36,31 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<effectEffectParameterEvaluator>(value);
 		}
 
+		[Ordinal(7)] 
+		[RED("blackwallScale")] 
+		public CFloat BlackwallScale
+		{
+			get => GetPropertyValue<CFloat>();
+			set => SetPropertyValue<CFloat>(value);
+		}
+
+		[Ordinal(8)] 
+		[RED("blackwallParameter")] 
+		public effectEffectParameterEvaluator BlackwallParameter
+		{
+			get => GetPropertyValue<effectEffectParameterEvaluator>();
+			set => SetPropertyValue<effectEffectParameterEvaluator>(value);
+		}
+
 		public effectTrackItemHudParameter()
 		{
 			TimeDuration = 1.000000F;
 			Scale = 1.000000F;
-			GlitchParameter = new();
+			GlitchParameter = new effectEffectParameterEvaluator();
 			Scale1 = 1.000000F;
-			GlitchParameter1 = new();
+			GlitchParameter1 = new effectEffectParameterEvaluator();
+			BlackwallScale = 1.000000F;
+			BlackwallParameter = new effectEffectParameterEvaluator();
 
 			PostConstruct();
 		}

@@ -69,6 +69,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(15)] 
+		[RED("messageOverrideDataList")] 
+		public CArray<CHandle<gameJournalEntryOverrideData>> MessageOverrideDataList
+		{
+			get => GetPropertyValue<CArray<CHandle<gameJournalEntryOverrideData>>>();
+			set => SetPropertyValue<CArray<CHandle<gameJournalEntryOverrideData>>>(value);
+		}
+
+		[Ordinal(16)] 
 		[RED("videoType")] 
 		public CEnum<gameVideoType> VideoType
 		{
@@ -76,7 +84,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CEnum<gameVideoType>>(value);
 		}
 
-		[Ordinal(16)] 
+		[Ordinal(17)] 
 		[RED("video")] 
 		public redResourceReferenceScriptToken Video
 		{
@@ -86,8 +94,9 @@ namespace WolvenKit.RED4.Types
 
 		public TutorialPopupData()
 		{
-			Margin = new();
-			Video = new();
+			Margin = new inkMargin();
+			MessageOverrideDataList = new();
+			Video = new redResourceReferenceScriptToken();
 
 			PostConstruct();
 		}

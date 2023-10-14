@@ -172,13 +172,22 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CName>(value);
 		}
 
+		[Ordinal(31)] 
+		[RED("perfectChargePerkSounds")] 
+		public audioPerfectChargePerkSounds PerfectChargePerkSounds
+		{
+			get => GetPropertyValue<audioPerfectChargePerkSounds>();
+			set => SetPropertyValue<audioPerfectChargePerkSounds>(value);
+		}
+
 		public audioPlayerWeaponSettings()
 		{
-			WeaponHandlingSettings = new();
-			FireModeSounds = new();
+			WeaponHandlingSettings = new audioWeaponHandlingSettings();
+			FireModeSounds = new audioWeaponFireModeSounds();
 			TimeLimitForAutoFireSingleShot = 0.250000F;
 			PadVibrationGain = 1.000000F;
 			PadVibrationReloadGain = 1.000000F;
+			PerfectChargePerkSounds = new audioPerfectChargePerkSounds();
 
 			PostConstruct();
 		}

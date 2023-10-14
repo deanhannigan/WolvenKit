@@ -2,7 +2,7 @@ using static WolvenKit.RED4.Types.Enums;
 
 namespace WolvenKit.RED4.Types
 {
-	public partial class workDynamicSyncBindCommandData : workIWorkspotCommandData
+	public partial class workDynamicSyncBindCommandData : workSyncBindBaseCommandData
 	{
 		[Ordinal(0)] 
 		[RED("masterID")] 
@@ -14,7 +14,7 @@ namespace WolvenKit.RED4.Types
 
 		public workDynamicSyncBindCommandData()
 		{
-			MasterID = new();
+			MasterID = new entEntityID();
 
 			PostConstruct();
 		}

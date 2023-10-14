@@ -53,6 +53,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(6)] 
+		[RED("overrideMaxInteractionDistance")] 
+		public CBool OverrideMaxInteractionDistance
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(7)] 
 		[RED("useCustomFaceVector")] 
 		public CBool UseCustomFaceVector
 		{
@@ -60,7 +68,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CBool>(value);
 		}
 
-		[Ordinal(7)] 
+		[Ordinal(8)] 
 		[RED("faceVector")] 
 		public Vector3 FaceVector
 		{
@@ -70,8 +78,8 @@ namespace WolvenKit.RED4.Types
 
 		public worlduiSceneWidgetProperties()
 		{
-			ProjectionPlaneSize = new() { X = 1.000000F, Y = 1.000000F };
-			FaceVector = new();
+			ProjectionPlaneSize = new Vector2 { X = 1.000000F, Y = 1.000000F };
+			FaceVector = new Vector3();
 
 			PostConstruct();
 		}

@@ -2,9 +2,9 @@ using static WolvenKit.RED4.Types.Enums;
 
 namespace WolvenKit.RED4.Types
 {
-	public partial class LeftHandCyberwareActionAbstractEvents : LeftHandCyberwareEventsTransition
+	public abstract partial class LeftHandCyberwareActionAbstractEvents : LeftHandCyberwareEventsTransition
 	{
-		[Ordinal(0)] 
+		[Ordinal(2)] 
 		[RED("projectileReleased")] 
 		public CBool ProjectileReleased
 		{

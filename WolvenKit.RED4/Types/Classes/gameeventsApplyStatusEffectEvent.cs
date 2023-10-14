@@ -21,6 +21,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(4)] 
+		[RED("proxyEntityID")] 
+		public entEntityID ProxyEntityID
+		{
+			get => GetPropertyValue<entEntityID>();
+			set => SetPropertyValue<entEntityID>(value);
+		}
+
+		[Ordinal(5)] 
 		[RED("isAppliedOnSpawn")] 
 		public CBool IsAppliedOnSpawn
 		{
@@ -30,7 +38,8 @@ namespace WolvenKit.RED4.Types
 
 		public gameeventsApplyStatusEffectEvent()
 		{
-			InstigatorEntityID = new();
+			InstigatorEntityID = new entEntityID();
+			ProxyEntityID = new entEntityID();
 
 			PostConstruct();
 		}

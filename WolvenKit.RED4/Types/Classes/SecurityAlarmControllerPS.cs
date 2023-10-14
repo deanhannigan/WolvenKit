@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class SecurityAlarmControllerPS : MasterControllerPS
 	{
-		[Ordinal(105)] 
+		[Ordinal(108)] 
 		[RED("securityAlarmSetup")] 
 		public SecurityAlarmSetup SecurityAlarmSetup
 		{
@@ -12,7 +12,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<SecurityAlarmSetup>(value);
 		}
 
-		[Ordinal(106)] 
+		[Ordinal(109)] 
 		[RED("securityAlarmState")] 
 		public CEnum<ESecuritySystemState> SecurityAlarmState
 		{
@@ -23,9 +23,9 @@ namespace WolvenKit.RED4.Types
 		public SecurityAlarmControllerPS()
 		{
 			DeviceName = "LocKey#109";
-			TweakDBRecord = 92888207289;
+			TweakDBRecord = "Devices.SecurityAlarm";
 			TweakDBDescriptionRecord = 144117121652;
-			SecurityAlarmSetup = new();
+			SecurityAlarmSetup = new SecurityAlarmSetup();
 			SecurityAlarmState = Enums.ESecuritySystemState.SAFE;
 
 			PostConstruct();

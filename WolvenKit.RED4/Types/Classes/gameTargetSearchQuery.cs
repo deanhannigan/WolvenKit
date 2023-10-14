@@ -45,6 +45,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(5)] 
+		[RED("filterObjectByDistance")] 
+		public CBool FilterObjectByDistance
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(6)] 
 		[RED("queryTarget")] 
 		public entEntityID QueryTarget
 		{
@@ -54,9 +62,9 @@ namespace WolvenKit.RED4.Types
 
 		public gameTargetSearchQuery()
 		{
-			SearchFilter = new();
+			SearchFilter = new gameTargetSearchFilter();
 			IncludeSecondaryTargets = true;
-			QueryTarget = new();
+			QueryTarget = new entEntityID();
 
 			PostConstruct();
 		}

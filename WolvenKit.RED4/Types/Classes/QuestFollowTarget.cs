@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class QuestFollowTarget : ActionEntityReference
 	{
-		[Ordinal(25)] 
+		[Ordinal(38)] 
 		[RED("ForcedTarget")] 
 		public entEntityID ForcedTarget
 		{
@@ -14,11 +14,12 @@ namespace WolvenKit.RED4.Types
 
 		public QuestFollowTarget()
 		{
-			RequesterID = new();
-			InteractionChoice = new() { CaptionParts = new() { Parts = new() }, Data = new(), ChoiceMetaData = new() { Type = new() }, LookAtDescriptor = new() { Offset = new(), OrbId = new() } };
-			ActionWidgetPackage = new() { DependendActions = new() };
+			RequesterID = new entEntityID();
+			CostComponents = new();
+			InteractionChoice = new gameinteractionsChoice { CaptionParts = new gameinteractionsChoiceCaption { Parts = new() }, Data = new(), ChoiceMetaData = new gameinteractionsChoiceMetaData { Type = new gameinteractionsChoiceTypeWrapper() }, LookAtDescriptor = new gameinteractionsChoiceLookAtDescriptor { Offset = new Vector3(), OrbId = new gameinteractionsOrbID() } };
+			ActionWidgetPackage = new SActionWidgetPackage { DependendActions = new() };
 			CanTriggerStim = true;
-			ForcedTarget = new();
+			ForcedTarget = new entEntityID();
 
 			PostConstruct();
 		}

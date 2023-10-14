@@ -5,14 +5,22 @@ namespace WolvenKit.RED4.Types
 	public partial class worldDebugColoring_ProxyMeshDependency : worldEditorDebugColoringSettings
 	{
 		[Ordinal(0)] 
-		[RED("autoColor")] 
-		public CColor AutoColor
+		[RED("noneColor")] 
+		public CColor NoneColor
 		{
 			get => GetPropertyValue<CColor>();
 			set => SetPropertyValue<CColor>(value);
 		}
 
 		[Ordinal(1)] 
+		[RED("hasProxyColor")] 
+		public CColor HasProxyColor
+		{
+			get => GetPropertyValue<CColor>();
+			set => SetPropertyValue<CColor>(value);
+		}
+
+		[Ordinal(2)] 
 		[RED("discardColor")] 
 		public CColor DiscardColor
 		{
@@ -22,8 +30,9 @@ namespace WolvenKit.RED4.Types
 
 		public worldDebugColoring_ProxyMeshDependency()
 		{
-			AutoColor = new();
-			DiscardColor = new();
+			NoneColor = new CColor();
+			HasProxyColor = new CColor();
+			DiscardColor = new CColor();
 
 			PostConstruct();
 		}

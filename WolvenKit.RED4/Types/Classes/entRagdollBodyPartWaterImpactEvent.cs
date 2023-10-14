@@ -38,8 +38,8 @@ namespace WolvenKit.RED4.Types
 
 		public entRagdollBodyPartWaterImpactEvent()
 		{
-			WorldPosition = new();
-			LinearVelocity = new();
+			WorldPosition = new Vector4 { W = 1.000000F };
+			LinearVelocity = new Vector4();
 
 			PostConstruct();
 		}

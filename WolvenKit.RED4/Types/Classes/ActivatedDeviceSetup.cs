@@ -125,6 +125,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(15)] 
+		[RED("shouldRagdollOnAttack")] 
+		public CBool ShouldRagdollOnAttack
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
+		}
+
+		[Ordinal(16)] 
 		[RED("deviceWidgetRecord")] 
 		public TweakDBID DeviceWidgetRecord
 		{
@@ -132,7 +140,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<TweakDBID>(value);
 		}
 
-		[Ordinal(16)] 
+		[Ordinal(17)] 
 		[RED("thumbnailIconRecord")] 
 		public TweakDBID ThumbnailIconRecord
 		{
@@ -140,7 +148,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<TweakDBID>(value);
 		}
 
-		[Ordinal(17)] 
+		[Ordinal(18)] 
 		[RED("actionWidgetRecord")] 
 		public TweakDBID ActionWidgetRecord
 		{
@@ -151,8 +159,9 @@ namespace WolvenKit.RED4.Types
 		public ActivatedDeviceSetup()
 		{
 			ActionName = "LocKey#233";
-			VfxResource = new();
-			ThumbnailIconRecord = 133181765352;
+			VfxResource = new gameFxResource();
+			ShouldRagdollOnAttack = true;
+			ThumbnailIconRecord = "DeviceIcons.GenenericDeviceIcon";
 
 			PostConstruct();
 		}

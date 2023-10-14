@@ -13,6 +13,14 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(1)] 
+		[RED("seperationImpulse")] 
+		public Vector4 SeperationImpulse
+		{
+			get => GetPropertyValue<Vector4>();
+			set => SetPropertyValue<Vector4>(value);
+		}
+
+		[Ordinal(2)] 
 		[RED("carId")] 
 		public entEntityID CarId
 		{
@@ -22,8 +30,9 @@ namespace WolvenKit.RED4.Types
 
 		public gameOnCarHitPlayer()
 		{
-			HitDirection = new();
-			CarId = new();
+			HitDirection = new Vector4();
+			SeperationImpulse = new Vector4();
+			CarId = new entEntityID();
 
 			PostConstruct();
 		}

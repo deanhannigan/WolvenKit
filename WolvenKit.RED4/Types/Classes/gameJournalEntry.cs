@@ -2,7 +2,7 @@ using static WolvenKit.RED4.Types.Enums;
 
 namespace WolvenKit.RED4.Types
 {
-	public partial class gameJournalEntry : IScriptable
+	public abstract partial class gameJournalEntry : IScriptable
 	{
 		[Ordinal(0)] 
 		[RED("id")] 
@@ -10,6 +10,14 @@ namespace WolvenKit.RED4.Types
 		{
 			get => GetPropertyValue<CString>();
 			set => SetPropertyValue<CString>(value);
+		}
+
+		[Ordinal(1)] 
+		[RED("journalEntryOverrideDataList")] 
+		public CArray<gameJournalEntryOverrideData> JournalEntryOverrideDataList
+		{
+			get => GetPropertyValue<CArray<gameJournalEntryOverrideData>>();
+			set => SetPropertyValue<CArray<gameJournalEntryOverrideData>>(value);
 		}
 
 		public gameJournalEntry()

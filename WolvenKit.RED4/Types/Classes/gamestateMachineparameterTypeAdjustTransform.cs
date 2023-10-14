@@ -22,8 +22,8 @@ namespace WolvenKit.RED4.Types
 
 		public gamestateMachineparameterTypeAdjustTransform()
 		{
-			Position = new();
-			Rotation = new() { R = 1.000000F };
+			Position = new Vector4 { W = 1.000000F };
+			Rotation = new Quaternion { R = 1.000000F };
 
 			PostConstruct();
 		}

@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class scnPlaySkAnimEvent : scnPlayFPPControlAnimEvent
 	{
-		[Ordinal(32)] 
+		[Ordinal(33)] 
 		[RED("animName")] 
 		public CHandle<scnAnimName> AnimName
 		{
@@ -12,7 +12,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CHandle<scnAnimName>>(value);
 		}
 
-		[Ordinal(33)] 
+		[Ordinal(34)] 
 		[RED("poseBlendOutWorkspot")] 
 		public CHandle<scnEventBlendWorkspotSetupParameters> PoseBlendOutWorkspot
 		{
@@ -20,7 +20,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CHandle<scnEventBlendWorkspotSetupParameters>>(value);
 		}
 
-		[Ordinal(34)] 
+		[Ordinal(35)] 
 		[RED("rootMotionData")] 
 		public scnPlaySkAnimRootMotionData RootMotionData
 		{
@@ -28,7 +28,7 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<scnPlaySkAnimRootMotionData>(value);
 		}
 
-		[Ordinal(35)] 
+		[Ordinal(36)] 
 		[RED("playerData")] 
 		public scnPlayerAnimData PlayerData
 		{
@@ -38,8 +38,8 @@ namespace WolvenKit.RED4.Types
 
 		public scnPlaySkAnimEvent()
 		{
-			RootMotionData = new() { OriginMarker = new() { Type = Enums.scnMarkerType.Global, EntityRef = new() { Names = new() }, IsMounted = true }, OriginOffset = new() { Position = new(), Orientation = new() { R = 1.000000F } }, CustomBlendInTime = -1.000000F, CustomBlendInCurve = Enums.scnEasingType.SinusoidalEaseInOut, RemovePitchRollRotation = true, MeshDissolvingEnabled = true, VehicleChangePhysicsState = true, VehicleEnabledPhysicsOnEnd = true, TrajectoryLOD = new() };
-			PlayerData = new() { UnmountBodyCarry = true };
+			RootMotionData = new scnPlaySkAnimRootMotionData { OriginMarker = new scnMarker { Type = Enums.scnMarkerType.Global, EntityRef = new gameEntityReference { Names = new() }, IsMounted = true }, OriginOffset = new Transform { Position = new Vector4(), Orientation = new Quaternion { R = 1.000000F } }, CustomBlendInTime = -1.000000F, CustomBlendInCurve = Enums.scnEasingType.SinusoidalEaseInOut, RemovePitchRollRotation = true, MeshDissolvingEnabled = true, VehicleChangePhysicsState = true, VehicleEnabledPhysicsOnEnd = true, TrajectoryLOD = new() };
+			PlayerData = new scnPlayerAnimData { UnmountBodyCarry = true };
 
 			PostConstruct();
 		}

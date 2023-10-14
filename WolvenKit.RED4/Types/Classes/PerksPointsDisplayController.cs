@@ -53,6 +53,30 @@ namespace WolvenKit.RED4.Types
 		}
 
 		[Ordinal(7)] 
+		[RED("desc3Text")] 
+		public inkTextWidgetReference Desc3Text
+		{
+			get => GetPropertyValue<inkTextWidgetReference>();
+			set => SetPropertyValue<inkTextWidgetReference>(value);
+		}
+
+		[Ordinal(8)] 
+		[RED("value3Text")] 
+		public inkTextWidgetReference Value3Text
+		{
+			get => GetPropertyValue<inkTextWidgetReference>();
+			set => SetPropertyValue<inkTextWidgetReference>(value);
+		}
+
+		[Ordinal(9)] 
+		[RED("icon3")] 
+		public inkImageWidgetReference Icon3
+		{
+			get => GetPropertyValue<inkImageWidgetReference>();
+			set => SetPropertyValue<inkImageWidgetReference>(value);
+		}
+
+		[Ordinal(10)] 
 		[RED("screenType")] 
 		public CEnum<CharacterScreenType> ScreenType
 		{
@@ -62,12 +86,15 @@ namespace WolvenKit.RED4.Types
 
 		public PerksPointsDisplayController()
 		{
-			Desc1Text = new();
-			Value1Text = new();
-			Icon1 = new();
-			Desc2Text = new();
-			Value2Text = new();
-			Icon2 = new();
+			Desc1Text = new inkTextWidgetReference();
+			Value1Text = new inkTextWidgetReference();
+			Icon1 = new inkImageWidgetReference();
+			Desc2Text = new inkTextWidgetReference();
+			Value2Text = new inkTextWidgetReference();
+			Icon2 = new inkImageWidgetReference();
+			Desc3Text = new inkTextWidgetReference();
+			Value3Text = new inkTextWidgetReference();
+			Icon3 = new inkImageWidgetReference();
 
 			PostConstruct();
 		}

@@ -326,10 +326,10 @@ namespace WolvenKit.RED4.Types
 
 		public inkMotorcycleHUDGameController()
 		{
-			PlayOptionReverse = new();
-			SpeedTextWidget = new();
-			GearTextWidget = new();
-			RPMTextWidget = new();
+			PlayOptionReverse = new inkanimPlaybackOptions { CustomTimeDilation = 1.000000F };
+			SpeedTextWidget = new inkTextWidgetReference();
+			GearTextWidget = new inkTextWidgetReference();
+			RPMTextWidget = new inkTextWidgetReference();
 
 			PostConstruct();
 		}

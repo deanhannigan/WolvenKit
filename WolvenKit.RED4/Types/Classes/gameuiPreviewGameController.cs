@@ -2,7 +2,7 @@ using static WolvenKit.RED4.Types.Enums;
 
 namespace WolvenKit.RED4.Types
 {
-	public partial class gameuiPreviewGameController : gameuiMenuGameController
+	public abstract partial class gameuiPreviewGameController : gameuiMenuGameController
 	{
 		[Ordinal(3)] 
 		[RED("yawSpeed")] 
@@ -34,6 +34,14 @@ namespace WolvenKit.RED4.Types
 		{
 			get => GetPropertyValue<CFloat>();
 			set => SetPropertyValue<CFloat>(value);
+		}
+
+		[Ordinal(7)] 
+		[RED("inputDisabled")] 
+		public CBool InputDisabled
+		{
+			get => GetPropertyValue<CBool>();
+			set => SetPropertyValue<CBool>(value);
 		}
 
 		public gameuiPreviewGameController()

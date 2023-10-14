@@ -5,11 +5,11 @@ namespace WolvenKit.RED4.Types
 	public partial class gsmGameDefinition : CResource
 	{
 		[Ordinal(1)] 
-		[RED("mainQuest")] 
-		public CResourceAsyncReference<questQuestResource> MainQuest
+		[RED("mainQuests")] 
+		public CArray<CHandle<gsmMainQuest>> MainQuests
 		{
-			get => GetPropertyValue<CResourceAsyncReference<questQuestResource>>();
-			set => SetPropertyValue<CResourceAsyncReference<questQuestResource>>(value);
+			get => GetPropertyValue<CArray<CHandle<gsmMainQuest>>>();
+			set => SetPropertyValue<CArray<CHandle<gsmMainQuest>>>(value);
 		}
 
 		[Ordinal(2)] 
@@ -46,7 +46,8 @@ namespace WolvenKit.RED4.Types
 
 		public gsmGameDefinition()
 		{
-			SpawnPointTags = new() { Tags = new() };
+			MainQuests = new();
+			SpawnPointTags = new redTagList { Tags = new() };
 
 			PostConstruct();
 		}

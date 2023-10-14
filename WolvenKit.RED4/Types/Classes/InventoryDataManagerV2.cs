@@ -300,6 +300,14 @@ namespace WolvenKit.RED4.Types
 			set => SetPropertyValue<CHandle<inkScriptWeakHashMap>>(value);
 		}
 
+		[Ordinal(37)] 
+		[RED("uiInventorySystem")] 
+		public CWeakHandle<UIInventoryScriptableSystem> UiInventorySystem
+		{
+			get => GetPropertyValue<CWeakHandle<UIInventoryScriptableSystem>>();
+			set => SetPropertyValue<CWeakHandle<UIInventoryScriptableSystem>>(value);
+		}
+
 		public InventoryDataManagerV2()
 		{
 			InventoryItemsData = new();
@@ -317,7 +325,7 @@ namespace WolvenKit.RED4.Types
 			ToRebuildEquipment = true;
 			ToRebuildQuickSlots = true;
 			ToRebuildConsumables = true;
-			ActiveWeapon = new();
+			ActiveWeapon = new gameItemID();
 			EquipRecords = new();
 			InventoryItemDataWrappers = new();
 

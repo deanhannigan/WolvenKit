@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class CrossingLightControllerPS : TrafficLightControllerPS
 	{
-		[Ordinal(104)] 
+		[Ordinal(107)] 
 		[RED("crossingLightSFXSetup")] 
 		public CrossingLightSetup CrossingLightSFXSetup
 		{
@@ -15,9 +15,9 @@ namespace WolvenKit.RED4.Types
 		public CrossingLightControllerPS()
 		{
 			DeviceName = "LocKey#125";
-			TweakDBRecord = 92771606930;
+			TweakDBRecord = "Devices.CrossingLight";
 			TweakDBDescriptionRecord = 144804359263;
-			CrossingLightSFXSetup = new();
+			CrossingLightSFXSetup = new CrossingLightSetup();
 
 			PostConstruct();
 		}

@@ -27,7 +27,7 @@ public class TweakDB
     public const uint Magic = 0x0BB1DB47;
     public const uint RecordsSeed = 0x5EEDBA5E;
 
-    public const uint BlobVersion = 5;
+    public const uint BlobVersion = 8;
     public const uint ParserVersion = 4;
 
     public FlatsPool Flats { get; set; } = new();
@@ -158,7 +158,7 @@ public class TweakDB
         {
             foreach (var pair in values)
             {
-                typeInfo.AddDynamicProperty(pair.Key, RedReflection.GetRedTypeFromCSType(pair.Value.GetType(), Flags.Empty));
+                instance.AddDynamicProperty(pair.Key, pair.Value.GetType());
                 instance.SetProperty(pair.Key, pair.Value);
             }
         }

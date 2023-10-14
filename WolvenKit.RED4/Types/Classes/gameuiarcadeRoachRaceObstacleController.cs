@@ -4,7 +4,7 @@ namespace WolvenKit.RED4.Types
 {
 	public partial class gameuiarcadeRoachRaceObstacleController : gameuiarcadeArcadeObjectController
 	{
-		[Ordinal(2)] 
+		[Ordinal(3)] 
 		[RED("collider")] 
 		public gameuiarcadeBoundingRect Collider
 		{
@@ -14,7 +14,7 @@ namespace WolvenKit.RED4.Types
 
 		public gameuiarcadeRoachRaceObstacleController()
 		{
-			Collider = new();
+			Collider = new gameuiarcadeBoundingRect();
 
 			PostConstruct();
 		}
